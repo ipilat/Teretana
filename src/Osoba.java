@@ -8,44 +8,53 @@ public class Osoba {
     private int korisnikId;
     private int kontaktBroj;
 
+    
+    public Osoba(String ime, String prezime, Boolean spol, Date datumRodenja, int korisnikId, int kontaktBroj) {
+        this.ime = ime;
+        this.prezime = prezime;
+        this.spol = spol;
+        this.datumRodenja = datumRodenja;
+        this.korisnikId = korisnikId;
+        this.kontaktBroj = kontaktBroj;
+    }
 
     public String getIme(){
-        return this.ime;
+        return ime;
     }
     public void setIme(String ime){
         this.ime=ime;
     }
 
     public String getPrezime(){
-        return this.prezime;
+        return prezime;
     }
     public void setPrezime(String prezime){
         this.prezime=prezime;
     }
 
     public Boolean getSpol() {
-        return this.spol;
+        return spol;
     }
     public void setSpol(Boolean spol){
         this.spol=spol;
     }
 
     public Date getDatumRodenja(){
-        return this.datumRodenja;
+        return datumRodenja;
     }
     public void setDatumRodenja(Date datumRodenja){
         this.datumRodenja=datumRodenja;
     }
 
     public int getKorisnikId(){
-        return this.korisnikId;
+        return korisnikId;
     }
     public void setKorisnikId(int korisnikId){
         this.korisnikId=korisnikId;
     }
 
     public int getKontaktBroj(){
-        return this.kontaktBroj;
+        return kontaktBroj;
     }
     public void setKontaktBroj(int kontaktBroj){
         this.kontaktBroj=kontaktBroj;
