@@ -1,14 +1,16 @@
-import java.util.Date;
+//import java.util.Date;
 
 public class Korisnik extends Osoba {
     private int trenerId;
     private int clanskiBroj;
+    private int korisnikId;
 
-    public Korisnik(String ime, String prezime, Boolean spol, Date datumRodenja, int korisnikId, int kontaktBroj,
-            int trenerId, int clanskiBroj) {
-        super(ime, prezime, spol, datumRodenja, korisnikId, kontaktBroj);
+    public Korisnik(String ime, String prezime, Boolean spol, String datumRodenja, int kontaktBroj, int trenerId,
+            int clanskiBroj, int korisnikId) {
+        super(ime, prezime, spol, datumRodenja, kontaktBroj);
         this.trenerId = trenerId;
         this.clanskiBroj = clanskiBroj;
+        this.korisnikId = korisnikId;
     }
 
     public int getTrenerId(){
@@ -23,5 +25,12 @@ public class Korisnik extends Osoba {
     }
     public void setClanskiBroj(int clanskiBroj){
         this.clanskiBroj=clanskiBroj;
+    }
+
+    public int getKorisnikId(){
+        return korisnikId;
+    }
+    public void setKorisnikId(int korisnikId){
+        this.korisnikId=korisnikId;
     }
 }
