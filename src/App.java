@@ -10,6 +10,8 @@ public class App {
         kor.dodajKorisnika(korisnik2);
         //kor.dodajKorisnika(korisnik);
         //kor.obrisiKorisnika(korisnik2);
+        //kor.dohvatiIdKorisnika();
+        kor.serializacijaKorisnik();
         kor.prikazKorisnika();
     }
 }

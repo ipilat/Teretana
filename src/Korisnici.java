@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import com.google.gson.Gson;
+//import com.google.gson.GsonBuilder;
 
 public class Korisnici {
     
@@ -41,17 +43,47 @@ public class Korisnici {
         korisnici.remove(korisnik);
     }
 
-    // TODO: azuriranje, metoda za getKorisnikId()
+    // TODO: azuriranje
 
     public void azurirajKorisnika(Korisnik korisnik){
         //korisnik.update(korisnik);
+        
+        //korisnik.set(dohvatiIdKorisnika(),);
+        
+        //for(int i = 0; i < korisnici.size(); i++){
+            //korisnici.set(dohvatiIdKorisnika(korisnik),);
+        
+            //}
+    }
+
+    public void dohvatiIdKorisnika(){
+        
+        //korisnik.getKorisnikId();
+        
         for(int i = 0; i < korisnici.size(); i++){
-            //korisnici.set(korisnici.get(i).getKorisnikId(),korisnik);
+            //korisnici.get(i).getKorisnikId();
+            System.out.println(korisnici.get(i).getKorisnikId());
         }
+        
+            //System.out.println("Korisnik Id : " + korisnik.getKorisnikId());
     }
 
     //metodu za unos objekta tipa Korisnik u podatkovni član ArrayList
     public void dodajKorisnika(Korisnik korisnik){
             korisnici.add(korisnik);
+    }
+
+    public void serializacijaKorisnik() {
+        
+        Gson gson = new Gson();
+        String json = gson.toJson(korisnici);
+        
+        System.out.println(json);
+    }
+
+    public void deserializacijaKorisnik(){
+        
+        Gson gson = new Gson();
+        //String json = gson.fromJson(korisnici, Korisnik.class);
     }
 }
