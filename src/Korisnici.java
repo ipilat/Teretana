@@ -1,6 +1,8 @@
+import java.io.FileWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import com.google.gson.Gson;
-//import com.google.gson.GsonBuilder;
+import com.google.gson.GsonBuilder;
 
 public class Korisnici {
     
@@ -75,15 +77,26 @@ public class Korisnici {
 
     public void serializacijaKorisnik() {
         
-        Gson gson = new Gson();
-        String json = gson.toJson(korisnici);
-        
-        System.out.println(json);
+        try{
+            
+            //kreiran writer
+            Writer writer = new FileWriter("korisnici.json");
+    
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+            //convertanje liste u JSON File
+            gson.toJson(korisnici, writer);
+
+            writer.close();
+            
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     public void deserializacijaKorisnik(){
         
         Gson gson = new Gson();
-        //String json = gson.fromJson(korisnici, Korisnik.class);
+        gson.fromJson("korisnici.json", Korisnik.class);
     }
 }

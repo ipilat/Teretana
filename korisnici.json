@@ -1,0 +1,22 @@
+[
+  {
+    "trenerId": 222454566,
+    "clanskiBroj": 33324,
+    "korisnikId": 32333,
+    "ime": "Ivan",
+    "prezime": "Navi",
+    "spol": true,
+    "datumRodenja": "1999-12-05",
+    "kontaktBroj": 22334
+  },
+  {
+    "trenerId": 22334,
+    "clanskiBroj": 33324,
+    "korisnikId": 32311,
+    "ime": "Marko",
+    "prezime": "Peric",
+    "spol": true,
+    "datumRodenja": "1999-12-05",
+    "kontaktBroj": 78637
+  }
+]
