@@ -1,8 +1,11 @@
 import java.io.FileWriter;
 import java.io.Writer;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.*;
+import java.nio.file.Paths;
 
 public class Korisnici {
     
@@ -13,7 +16,8 @@ public class Korisnici {
     //konstruktor koji će instancirati ArrayList
 
     public Korisnici(){
-        korisnici = new ArrayList<Korisnik>();
+        //korisnici = new ArrayList<Korisnik>();
+        deserializacijaKorisnika();
     }
 
     // TODO: prikaz korisnika
@@ -42,12 +46,22 @@ public class Korisnici {
     // TODO: brisanje
 
     public void obrisiKorisnika(Korisnik korisnik){
-        korisnici.remove(korisnik);
+        int index = dohvatiKorisnika(korisnik);
+        if (index != -1) {
+            korisnici.remove(index);
+        }
+        serializacijaKorisnika();
     }
 
     // TODO: azuriranje
 
     public void azurirajKorisnika(Korisnik korisnik){
+        int index = dohvatiKorisnika(korisnik);
+        if (index != -1) {
+            korisnici.set(index, korisnik);
+        }
+        serializacijaKorisnika();
+
         //korisnik.update(korisnik);
         
         //korisnik.set(dohvatiIdKorisnika(),);
@@ -58,24 +72,25 @@ public class Korisnici {
             //}
     }
 
-    public void dohvatiIdKorisnika(){
-        
-        //korisnik.getKorisnikId();
-        
+    public int dohvatiKorisnika(Korisnik korisnik){
         for(int i = 0; i < korisnici.size(); i++){
+            if (korisnici.get(i).getKorisnikId() == korisnik.getKorisnikId()) {
+                return i;
+            }
             //korisnici.get(i).getKorisnikId();
-            System.out.println(korisnici.get(i).getKorisnikId());
+            //System.out.println(korisnici.get(i).getKorisnikId());
         }
-        
+        return -1;
             //System.out.println("Korisnik Id : " + korisnik.getKorisnikId());
     }
 
     //metodu za unos objekta tipa Korisnik u podatkovni član ArrayList
     public void dodajKorisnika(Korisnik korisnik){
             korisnici.add(korisnik);
+            serializacijaKorisnika();
     }
 
-    public void serializacijaKorisnik() {
+    public void serializacijaKorisnika() {
         
         try{
             
@@ -94,9 +109,13 @@ public class Korisnici {
         }
     }
 
-    public void deserializacijaKorisnik(){
-        
-        Gson gson = new Gson();
-        gson.fromJson("korisnici.json", Korisnik.class);
+    public void deserializacijaKorisnika(){
+        try {
+            String data = new String(Files.readAllBytes(Paths.get("korisnici.json")));
+            Gson gson = new Gson();
+            korisnici = gson.fromJson(data, new TypeToken<ArrayList<Korisnik>>(){}.getType());
+        } catch(Exception e) {
+            System.out.println("Nije moguce ucitati podatke");
+        }
     }
 }

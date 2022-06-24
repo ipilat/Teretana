@@ -1,13 +1,14 @@
-///import java.util.Date;
 
-public class Trener extends Osoba {
+public class Trener extends Korisnik {
     private String vrijemeTreninga;
     private int cijenaTreninga;
+    
 
-    public Trener(String ime, String prezime, Boolean spol, String datumRodenja, int kontaktBroj, String vrijemeTreninga, int cijenaTreninga) {
-        super(ime, prezime, spol, datumRodenja, kontaktBroj);
-        this.vrijemeTreninga=vrijemeTreninga;
-        this.cijenaTreninga=cijenaTreninga;
+    public Trener(String ime, String prezime, Boolean spol, String datumRodenja, int kontaktBroj, int trenerId,
+            int clanskiBroj, int korisnikId, String vrijemeTreninga, int cijenaTreninga) {
+        super(ime, prezime, spol, datumRodenja, kontaktBroj, trenerId, clanskiBroj, korisnikId);
+        this.vrijemeTreninga = vrijemeTreninga;
+        this.cijenaTreninga = cijenaTreninga;
     }
 
     public String getVrijemeTreninga() {
@@ -25,6 +26,5 @@ public class Trener extends Osoba {
     public void setCijenaTreninga(int cijenaTreninga) {
         this.cijenaTreninga = cijenaTreninga;
     }
-    
     
 }

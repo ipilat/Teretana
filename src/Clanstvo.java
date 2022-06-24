@@ -1,10 +1,10 @@
-import java.util.Date;
+
 
 public class Clanstvo {
     private int cijenaPaketa;
     private String imePaketa;
-    private int kolicinaPaketa;
-    private Date trajanjeClanstva;
+    private int korisnikId;
+    private int trenerId;
     
     public int getCijenaPaketa() {
         return cijenaPaketa;
@@ -18,17 +18,17 @@ public class Clanstvo {
     public void setImePaketa(String imePaketa) {
         this.imePaketa = imePaketa;
     }
-    public int getKolicinaPaketa() {
-        return kolicinaPaketa;
+    public int getKorisnikId() {
+        return korisnikId;
     }
-    public void setKolicinaPaketa(int kolicinaPaketa) {
-        this.kolicinaPaketa = kolicinaPaketa;
+    public void setKorisnikId(int korisnikId) {
+        this.korisnikId = korisnikId;
     }
-    public Date getTrajanjeClanstva() {
-        return trajanjeClanstva;
+    public int getTrenerId() {
+        return trenerId;
     }
-    public void setTrajanjeClanstva(Date trajanjeClanstva) {
-        this.trajanjeClanstva = trajanjeClanstva;
+    public void setTrenerId(int trenerId) {
+        this.trenerId = trenerId;
     }
-
+    
 }
