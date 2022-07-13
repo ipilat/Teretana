@@ -4,7 +4,12 @@ public class Clanstvo {
     private int cijenaPaketa;
     private String imePaketa;
     private int korisnikId;
-    private int trenerId;
+    
+    public Clanstvo(int cijenaPaketa, String imePaketa, int korisnikId) {
+        this.cijenaPaketa = cijenaPaketa;
+        this.imePaketa = imePaketa;
+        this.korisnikId = korisnikId;
+    }
     
     public int getCijenaPaketa() {
         return cijenaPaketa;
@@ -23,12 +28,6 @@ public class Clanstvo {
     }
     public void setKorisnikId(int korisnikId) {
         this.korisnikId = korisnikId;
-    }
-    public int getTrenerId() {
-        return trenerId;
-    }
-    public void setTrenerId(int trenerId) {
-        this.trenerId = trenerId;
     }
     
 }

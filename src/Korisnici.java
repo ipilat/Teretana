@@ -20,11 +20,9 @@ public class Korisnici {
         deserializacijaKorisnika();
     }
 
-    // TODO: prikaz korisnika
 
     public void prikazKorisnika() {
         for(int i = 0; i < korisnici.size(); i++){
-            //System.out.println(korisnici.get(i));
             System.out.println("----------------------------------");
             System.out.println("Ime : " + korisnici.get(i).getIme());
             System.out.println("Prezime : " + korisnici.get(i).getPrezime());
@@ -43,7 +41,7 @@ public class Korisnici {
         }
     }
 
-    // TODO: brisanje
+
 
     public void obrisiKorisnika(Korisnik korisnik){
         int index = dohvatiKorisnika(korisnik);
@@ -53,7 +51,6 @@ public class Korisnici {
         serializacijaKorisnika();
     }
 
-    // TODO: azuriranje
 
     public void azurirajKorisnika(Korisnik korisnik){
         int index = dohvatiKorisnika(korisnik);
@@ -61,15 +58,6 @@ public class Korisnici {
             korisnici.set(index, korisnik);
         }
         serializacijaKorisnika();
-
-        //korisnik.update(korisnik);
-        
-        //korisnik.set(dohvatiIdKorisnika(),);
-        
-        //for(int i = 0; i < korisnici.size(); i++){
-            //korisnici.set(dohvatiIdKorisnika(korisnik),);
-        
-            //}
     }
 
     public int dohvatiKorisnika(Korisnik korisnik){
@@ -77,11 +65,8 @@ public class Korisnici {
             if (korisnici.get(i).getKorisnikId() == korisnik.getKorisnikId()) {
                 return i;
             }
-            //korisnici.get(i).getKorisnikId();
-            //System.out.println(korisnici.get(i).getKorisnikId());
         }
         return -1;
-            //System.out.println("Korisnik Id : " + korisnik.getKorisnikId());
     }
 
     //metodu za unos objekta tipa Korisnik u podatkovni član ArrayList
@@ -115,7 +100,7 @@ public class Korisnici {
             Gson gson = new Gson();
             korisnici = gson.fromJson(data, new TypeToken<ArrayList<Korisnik>>(){}.getType());
         } catch(Exception e) {
-            System.out.println("Nije moguce ucitati podatke");
+            System.out.println("Nije moguce ucitati podatke o korisniku");
         }
     }
 }

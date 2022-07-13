@@ -1,14 +1,22 @@
 [
   {
     "vrijemeTreninga": "2h",
-    "cijenaTreninga": 320,
-    "trenerId": 302,
-    "clanskiBroj": 405,
-    "korisnikId": 553,
-    "ime": "Netko",
-    "prezime": "Nesto",
-    "spol": false,
-    "datumRodenja": "1994-09-05",
-    "kontaktBroj": 4554455
+    "cijenaTreninga": 50,
+    "trenerId": 232,
+    "ime": "Marko",
+    "prezime": "Markovic",
+    "spol": true,
+    "datumRodenja": "1994-02-22",
+    "kontaktBroj": 235
+  },
+  {
+    "vrijemeTreninga": "4h",
+    "cijenaTreninga": 100,
+    "trenerId": 237,
+    "ime": "Marko",
+    "prezime": "Petrovic",
+    "spol": true,
+    "datumRodenja": "1992-05-12",
+    "kontaktBroj": 235467
   }
 ]

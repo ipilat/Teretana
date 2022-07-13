@@ -28,9 +28,8 @@ public class Treneri{
             System.out.println("Spol : " + treneri.get(i).getSpol());
             System.out.println("DatumRodenja : " + treneri.get(i).getDatumRodenja());
             System.out.println("KontaktBroj : " + treneri.get(i).getKontaktBroj());
-            System.out.println("TrenerId : " + treneri.get(i).getTrenerId());
-            System.out.println("ClanskiBroj : " + treneri.get(i).getClanskiBroj());
-            System.out.println("KorisnikId : " + treneri.get(i).getKorisnikId());
+            System.out.println("KontaktBroj : " + treneri.get(i).getVrijemeTreninga());
+            System.out.println("KontaktBroj : " + treneri.get(i).getCijenaTreninga());
             System.out.println("----------------------------------");
         }
     }
@@ -75,7 +74,7 @@ public class Treneri{
     
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-            //convertanje liste u JSON File
+            //convertiranje liste u JSON File
             gson.toJson(treneri, writer);
 
             writer.close();
